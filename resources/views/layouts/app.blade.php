@@ -79,7 +79,7 @@
             @yield('content')
         </main>
 
-        <footer class="fixed-bottom">
+        <br><br><footer class="fixed-bottom">
             <center>
                 Copyright &copy; Larapus Made With Love <br>
                 Developed by <a href="#">Dina Amelia</a> -

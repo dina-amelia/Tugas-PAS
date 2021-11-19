@@ -40,12 +40,7 @@
                                     <td>{{$data->password}}</td>
                                     <td>{{$data->telepon}}</td>
                                     <td>
-                                        <form action="{{route('donatur.destroy', $data->id)}}" method="post">
-                                            @method('delete')
-                                            @csrf
-                                            <a href="{{route('donatur.edit', $data->id)}}" class="btn btn-outline-info">Edit</a>
-                                            <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah anda yakin menghapus')">Delete</button>
-                                        </form>
+
                                     </td>
                                 </tr>
                             @endforeach

@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/home" class="brand-link">
-      <img src="{{ asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      <img src="{{ asset('assets/dist/img/peduli.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Panti Yatim Indonesia</span>
     </a>
 
     <!-- Sidebar -->
@@ -11,7 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="pb-3 mt-3 mb-3 user-panel d-flex">
         <div class="image">
-          <img src="{{ asset('assets/dist/img/din.jpeg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('assets/dist/img/logo.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
             @auth
@@ -83,13 +83,34 @@
                 {{-- INI KHUSUS SIDEBARNYA USER --}}
                 @if (Auth::user()->type == 1)
                 <li class="nav-item has-treeview">
-                    <a href="{{ url("user") }}" class="nav-link {{ Request::is('user') ? 'active' : '' }}">
+                    <a href="{{ url("/") }}" class="nav-link {{ Request::is('user') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                         </p>
                     </a>
                 </li>
+                <li class="nav-item has-treeview {{ Request::is('user/content/*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('user/content/*') ? 'active' : '' }}">
+                    <i class="nav-icon fa fa-list"></i>
+                    <p>
+                    Content
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route("laporan.index") }}" class="nav-link {{ Request::is('user/content/laporan') ? 'active' : '' }}">
+                        <i class="fa fa-book nav-icon"></i>
+                        <p>Laporan</p>
+                        </a>
+                    </li>
+                        <li class="nav-item">
+                            <a href="{{ route("donatur.index") }}" class="nav-link {{ Request::is('user/content/donatur') ? 'active' : '' }}">
+                            <i class="fa fa-users nav-icon"></i>
+                            <p>Data Donatur</p>
+                            </a>
+                        </li>
                 @endif
             @endauth
 

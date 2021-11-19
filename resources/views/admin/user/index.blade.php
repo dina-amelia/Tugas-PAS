@@ -45,8 +45,6 @@
                                         <form action="{{route('laporan.destroy', $data->id)}}" method="post">
                                             @method('delete')
                                             @csrf
-                                            <a href="{{route('laporan.edit', $data->id)}}" class="btn btn-outline-info">Edit</a>
-                                            <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah anda yakin menghapus')">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

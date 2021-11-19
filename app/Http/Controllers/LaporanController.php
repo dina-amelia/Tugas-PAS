@@ -37,7 +37,7 @@ class LaporanController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'idLaporan'=>'required',
+            'Id'=>'required',
             'pengeluaran_id'=>'required',
             'donasi_id'=>'required',
             'konfirmasi_id'=>'required',
@@ -48,14 +48,16 @@ class LaporanController extends Controller
         ]);
 
         $laporan = new Laporan;
-        $laporan->idLaporan = $request->idLaporan;
+        $laporan->Id = $request->Id;
         $laporan->pengeluaran_id = $request->pengeluaran_id;
         $laporan->donasi_id = $request->donasi_id;
         $laporan->konfirmasi_id = $request->konfirmasi_id;
         $laporan->pemasukan = $request->pemasukan;
         $laporan->pengeluaran = $request->pengeluaran;
         $laporan->saldo = $request->saldo;
+        $laporan->cetak = $request->cetak;
         $laporan->save();
+        dd($laporan);
         return redirect()->route('user.index');
     }
 

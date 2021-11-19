@@ -30,7 +30,7 @@ class CreateLaporansTable extends Migration
             $table->string('pemasukan');
             $table->string('pengeluaran');
             $table->string('saldo');
-            $table->string('cetak');
+            $table->string('cetak')->nullable();
             //fk pengeluaran_id
             // $table->foreign('pengeluaran_id')->references('id')
             // ->on('pengeluarans')->onUpdate('cascade')

@@ -9,4 +9,5 @@ class Laporan extends Model
 {
     use HasFactory;
     protected $table = 'laporans';
+    protected $fillable = ["pengeluaran_id","donasi_id","konfirmasi_id","pemasukan","pengeluaran","saldo"];
 }

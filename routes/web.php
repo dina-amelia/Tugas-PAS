@@ -23,9 +23,11 @@ use App\Http\Controllers\KonfirmasiController;
 */
 
 Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 Auth::routes();
 Route::get('/home', function () {
      if (Auth::user()->type == 2) { // if the current role is Administrator
